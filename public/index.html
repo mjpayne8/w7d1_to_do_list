@@ -18,7 +18,7 @@
         <input type="submit">
       </form>
       <ul>
-        <li v-for="item in items">
+        <li v-for="item in items" v-bind:class="item.priority==='high' ? 'high':'low'">
           <span>{{item.task}}</span>
         </li>
       </ul>
