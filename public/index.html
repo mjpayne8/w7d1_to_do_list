@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <form v-on:submit.prevent = "addToDo">
+        <label for="to-do-item">Add Item: </label>
+        <input type="text" id="to-do-item" v-model="newItem">
+        <label for="radio-low">Low</label>
+        <input id="radio-low" type="radio" name= "priority" value="low" v-model="newPriority">
+        <label for="radio-high">High</label>
+        <input type="radio" name= "priority" value="high" v-model="newPriority">
+        <input type="submit">
+      </form>
+      <ul>
+        <li v-for="item in items">
+          <span>{{item.task}}</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
